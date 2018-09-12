@@ -39,6 +39,7 @@ void mousePressed()
   endX = 120;
   endY = 120;
 }
+
 void pikachu(){
   noStroke();
   fill(252, 249, 58);
@@ -78,22 +79,89 @@ void pikachu(){
   triangle(365, 168, 330, 235, 325, 185); 
 }
 
+/*void lightning_in1(){
+  line(startX, startY, endX, endY);
+        startX = endX;
+        startY = endY;
+  }
+
+void sw_change(){
+  if (sw>1){
+      sw = sw - 0.01;
+  }
+*/
+  
+void reset (){
+  startY = 250;
+  startX = 250;
+}
+
 void lightning(int x, int y){
-  int minx = x-250;
-  int miny = y-250;
-  int maxx = x;
-  int maxy = y;
   stroke(250, 255,(int)(Math.random()*255));
   strokeWeight(sw);
-  while ( > 0){
-    strokeWeight(sw);
-    endX = startX + (int)(Math.random()*250);
-    endY = startY + (int)(Math.random()*250);
-    line(startX, startY, endX, endY);
-    startX = endX;
-    startY = endY;
-    if (sw>1){
-      sw = sw - 0.01;
+  if (y<=250) {
+    if (x<250){
+      while(endY >0){
+        strokeWeight(sw);
+        endX = startX - (int)(Math.random()*30);
+        endY = startY - (int)(Math.random()*30);
+        line(startX, startY, endX, endY);
+        startX = endX;
+        startY = endY;
+        if (sw>1){
+          sw = sw - 0.01;
+        }
+      // lightning_in1();
+      // sw_change();
+      }
+    }
+    else{
+      while(endY>0){
+        strokeWeight(sw);
+        endX = startX + (int)(Math.random()*30);
+        endY = startY - (int)(Math.random()*30);
+        line(startX, startY, endX, endY);
+        startX = endX;
+        startY = endY;
+        if (sw>1){
+          sw = sw - 0.01;
+        }        
+       // lightning_in1();
+       // sw_change();
+      }
     }
   }
+  else{
+    if (x<250){
+      while(endY<500){
+        strokeWeight(sw);
+        endX = startX - (int)(Math.random()*30);
+        endY = startY + (int)(Math.random()*30);
+        line(startX, startY, endX, endY);
+        startX = endX;
+        startY = endY;
+        if (sw>1){
+          sw = sw - 0.01;
+        }        
+        //lightning_in1();
+       // sw_change();
+      }
+    }   
+    else{
+      while(endY<500){
+        strokeWeight(sw);
+        endX = startX - (int)(Math.random()*30);
+        endY = startY + (int)(Math.random()*30);
+        line(startX, startY, endX, endY);
+        startX = endX;
+        startY = endY;
+        if (sw>1){
+          sw = sw - 0.01;
+        }        
+       // lightning_in1();
+       // sw_change();
+      }
+    }
+  }
+  reset();
 }
