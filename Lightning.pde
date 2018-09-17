@@ -70,13 +70,15 @@ void reset (){
 }
 
 void lightning(int quad){
+  int var1 = ((int)(Math.random()*(int)(Math.random()*70)))+30;
+  int var2 = ((int)(Math.random()*(int)(Math.random()*70)))+30;
   stroke(250, 255,(int)(Math.random()*255));
   strokeWeight(sw);
   if (quad == 1) {
     while(endY >0 && endX>0){
         strokeWeight(sw);
-        endX = startX - (int)(Math.random()*30);
-        endY = startY - (int)(Math.random()*30);
+        endX = startX - (int)(Math.random()*var1);
+        endY = startY - (int)(Math.random()*var2);
         line(startX, startY, endX, endY);
         startX = endX;
         startY = endY;
@@ -112,10 +114,10 @@ void lightning(int quad){
        }       
      }
   }   
-    if (quad ==4){
+    if (quad == 4){
       while(endY<500 && endX<500){
         strokeWeight(sw);
-        endX = startX - (int)(Math.random()*var1);
+        endX = startX + (int)(Math.random()*var1);
         endY = startY + (int)(Math.random()*var2);
         line(startX, startY, endX, endY);
         startX = endX;
