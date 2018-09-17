@@ -27,20 +27,24 @@ void mousePressed()
 
 void pikachu(){
   noStroke();
+  //face
   fill(252, 249, 58);
   ellipse(250, 280, 160, 130);
   ellipse(220, 296, 110, 100);
   ellipse(280, 296, 110, 100);
-  arc(225.0, 160.0, 180.0, 180.0, HALF_PI +0.1, PI -0.1, CHORD);
-  arc(125.0, 260.0, 180.0, 180.0, -HALF_PI +0.1 , -0.1, CHORD);
-  arc(275.0, 160.0, 180.0, 180.0, 0.1 , HALF_PI -0.1, CHORD);
-  arc(375.0, 260.0, 180.0, 180.0, PI +0.1 , HALF_PI*3 -0.1, CHORD);
+  //ears
+  arc(225.0, 160.0, 180.0, 180.0, HALF_PI +0.1, PI -0.1, OPEN);
+  arc(125.0, 260.0, 180.0, 180.0, -HALF_PI +0.1 , -0.1, OPEN);
+  arc(275.0, 160.0, 180.0, 180.0, 0.1 , HALF_PI -0.1, OPEN);
+  arc(375.0, 260.0, 180.0, 180.0, PI +0.1 , HALF_PI*3 -0.1, OPEN);
+  //cheeks
   fill(204, 81, 77);
   ellipse(315, 300, 40, 40);
   ellipse(185, 300, 40, 40);
+  //eyes
   fill(0);
-  arc(220.0, 280.0, 40.0, 40.0, 0,3*HALF_PI - 0.4, CHORD);
-  arc(280.0, 280.0, 40.0, 40.0, -HALF_PI+0.4, PI, CHORD);
+  arc(220.0, 280.0, 40.0, 40.0, 0,3*HALF_PI - 0.4, OPEN);
+  arc(280.0, 280.0, 40.0, 40.0, -HALF_PI+0.4, PI, OPEN);
   ellipse(250, 300, 10, 8);
   ellipse(250, 302, 6, 6);
   fill(255);
@@ -56,11 +60,12 @@ void pikachu(){
   line(250, 320, 240, 325);
   fill(0);
   strokeWeight(0.9);
-  arc(225.0, 160.0, 180.0, 180.0, HALF_PI +(HALF_PI*0.42), PI -0.1,CHORD);
-  arc(125.0, 260.0, 180.0, 180.0, -HALF_PI +0.1 , -(HALF_PI*0.6), CHORD);
+  //black parts of the ears
+  arc(225.0, 160.0, 180.0, 180.0, HALF_PI +(HALF_PI*0.42), PI -0.1,OPEN);
+  arc(125.0, 260.0, 180.0, 180.0, -HALF_PI +0.1 , -(HALF_PI*0.6), OPEN);
   triangle(135, 168, 170, 235, 175, 185);
-  arc(275.0, 160.0, 180.0, 180.0, 0.1 , HALF_PI -(HALF_PI*0.42), CHORD);
-  arc(375.0, 260.0, 180.0, 180.0, PI + (HALF_PI*0.6), HALF_PI*3 -0.1, CHORD);
+  arc(275.0, 160.0, 180.0, 180.0, 0.1 , HALF_PI -(HALF_PI*0.42), OPEN);
+  arc(375.0, 260.0, 180.0, 180.0, PI + (HALF_PI*0.6), HALF_PI*3 -0.1, OPEN);
   triangle(365, 168, 330, 235, 325, 185); 
 }
 
