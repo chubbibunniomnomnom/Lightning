@@ -134,5 +134,6 @@ void lightning(int quad){
     }
     startX = 250;
     startY = 250;
+    sw = (int)(Math.random()*3+1);
   }
   
